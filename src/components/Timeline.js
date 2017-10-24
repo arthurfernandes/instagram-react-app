@@ -8,12 +8,11 @@ export default class Timeline extends Component {
     }
 
     componentDidMount() {
-        fetch('http://localhost:8080/api/public/fotos/rafael')
+        fetch('http://localhost:8080/api/public/fotos/vitor')
             .then(res => res.json())
             .then(fotos => {
                 this.setState({fotos: fotos});
-            });
-        
+            });   
     }
 
     render() {
@@ -21,7 +20,7 @@ export default class Timeline extends Component {
             <div className="fotos container">
                 {
                     this.state.fotos.map(foto => (
-                        <FotoItem foto={foto}/>
+                        <FotoItem key={foto.id} foto={foto}/>
                     ))
                 }
             </div>
