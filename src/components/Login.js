@@ -3,7 +3,6 @@ import {browserHistory} from  'react-router';
 
 class Login extends Component {
     constructor(props) {
-        console.log(props);
         super(props);
         this.state = {msg : this.props.location.query.msg}
     }
